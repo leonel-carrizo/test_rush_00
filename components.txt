@@ -1,0 +1,35 @@
+components
+
+loop_medio_top
+	
+	i = 2;
+	while (i < x)
+	putchar('*')
+	i++
+
+loop_medio_columna_incio
+	
+	j = 2;
+	while (j < y)
+	putchar('*')
+	ft_putchar(10);
+	j++
+
+loop_central
+	
+	k = 2
+	while (k < y)
+		putchar(*)
+		l = 2
+		while (l < x)
+			putchar( spacio )
+			l++
+		putchar(*)
+		k++
+
+loop_medio_botton
+
+	m = 2;
+	while (m < x)
+	putchar(*)
+	m++
