@@ -12,78 +12,51 @@
 #include <unistd.h>
 
 void	ft_putchar(char c);
+void	top_row(int width);
+void	medio_top(int width);
+void	start_column(int b);
+void	end_row(int e);
+
+void	whole_body(int width, int lenght)
+{
+	int	i;
+	int	j;
+
+	medio_top(width);
+	i = 2;
+	while (i < lenght)
+	{
+		ft_putchar('*');
+		j = 2;
+		while (j < width)
+		{
+			ft_putchar(32);
+			j++;
+		}
+		ft_putchar('*');
+		ft_putchar(10);
+		i++;
+	}
+	end_row(width);
+}
 
 int	rush(int x, int y)
 {
-	int	i, j, k, m, l;
 	if (x <= 1 && y <= 1)
 	{
 		ft_putchar('/');
 	}
-
 	else if (x > 1 && y <= 1)
 	{
-		ft_putchar('/');
-		i = 2;
-		while (i < x)
-		{
-		ft_putchar('*');
-		i++;
-		}
-		ft_putchar(92);
+		top_row(x);
 	}
-
-	else if (x <=1 && y > 1)
+	else if (x <= 1 && y > 1)
 	{
-		ft_putchar('/');
-		ft_putchar(10);
-		j = 2;
-		while (j < y)
-		{
-		ft_putchar('*');
-		ft_putchar(10);
-		j++;
-		}
-		ft_putchar(92);
+		start_column(y);
 	}
-
 	else
 	{
-		ft_putchar('/');
-		l = 2;
-		while (l < x)
-		{
-		ft_putchar('*');
-		l++;
-		}
-		ft_putchar(92);
-		ft_putchar(10);
-
-		k = 2;
-		while (k < y)
-		{
-			ft_putchar('*');
-			l = 2;
-			while (l < x)
-			{
-				ft_putchar(32);
-				l++;
-			}
-			ft_putchar('*');
-			ft_putchar(10);
-			k++;
-		}
-
-		ft_putchar(92);
-		m = 2;
-		while (m < x)
-		{
-			ft_putchar('*');
-			m++;
-		}
-		ft_putchar('/');
+		whole_body(x, y);
 	}
-
 	return (0);
 }
-
